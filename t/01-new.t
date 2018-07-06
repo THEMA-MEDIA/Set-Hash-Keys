@@ -44,4 +44,29 @@ subtest 'Constructing' => sub {
     
 };
 
+subtest 'Keys and Values' => sub {
+    plan tests => 2;
+    
+    my $set_x = Set::Hash::Keys->new(
+        foo => 'A',
+        bar => 'B',
+    );
+    my @keys = keys %$set_x;
+    cmp_bag(
+        \@keys => [
+            'bar',
+            'foo',
+        ],
+        "Set allows function 'keys'"
+    );
+    my @vals = values %$set_x;
+    cmp_bag(
+        \@vals => [
+            'B',
+            'A',
+        ],
+        "Set allows function 'values'"
+    );
+    
+};
 done_testing();
