@@ -3,7 +3,7 @@ use Test::Most;
 use Set::Hash::Keys;
 
 subtest 'Constructing' => sub {
-    plan tests => 6;
+    plan tests => 7;
     
     my $set_0;
     lives_ok {
@@ -11,6 +11,10 @@ subtest 'Constructing' => sub {
     }
     "Can create an object from nothing";
     isa_ok $set_0, 'Set::Hash::Keys';
+    cmp_deeply(
+        { %$set_0 } => { },
+        "... and is empty"
+    );
     
     my $set_1;
     lives_ok {
@@ -69,4 +73,5 @@ subtest 'Keys and Values' => sub {
     );
     
 };
+
 done_testing();
