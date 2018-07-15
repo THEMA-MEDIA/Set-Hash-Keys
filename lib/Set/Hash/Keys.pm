@@ -2,6 +2,13 @@ package Set::Hash::Keys;
 
 use List::Util 'reduce';
 
+use overload(
+    '+'   => sub { pop @_ ?        union($_[1],$_[0]) :        union($_[0],$_[1]) },
+    '-'   => sub { pop @_ ?   difference($_[1],$_[0]) :   difference($_[0],$_[1]) },
+    '*'   => sub { pop @_ ? intersection($_[1],$_[0]) : intersection($_[0],$_[1]) },
+    '/'   => sub { pop @_ ?    exclusive($_[1],$_[0]) :    exclusive($_[0],$_[1]) },
+    '%'   => sub {                                       symmetrical($_[0],$_[1]) },
+
 sub new {
     my $class = shift;
     my %data = @_;
