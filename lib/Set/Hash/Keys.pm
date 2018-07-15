@@ -9,4 +9,20 @@ sub new {
     return bless \%data, $class
 }
 
+sub intersection {
+    return unless defined $_[0];
+
+    my $hash_ref = reduce {
+        +{
+            map {
+                $_, $b->{$_}
+            } grep {
+                exists $b->{$_}
+            } keys %$a
+        }
+    } @_;
+    
+    __PACKAGE__->new( %$hash_ref );
+}
+
 1;
