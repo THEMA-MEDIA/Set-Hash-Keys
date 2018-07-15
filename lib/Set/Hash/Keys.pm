@@ -1,5 +1,7 @@
 package Set::Hash::Keys;
 
+use List::Util 'reduce';
+
 sub new {
     my $class = shift;
     my %data = @_;
