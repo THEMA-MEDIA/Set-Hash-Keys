@@ -62,4 +62,8 @@ sub difference {
     __PACKAGE__->new( %$hash_ref )
 }
 
+sub exclusive {
+    wantarray() ? difference( @_ ) : union( difference( @_ ) )
+}
+
 1;
