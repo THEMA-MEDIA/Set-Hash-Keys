@@ -66,4 +66,8 @@ sub exclusive {
     wantarray() ? difference( @_ ) : union( difference( @_ ) )
 }
 
+sub symmetrical {
+    reduce { union ( difference( $a, $b ) ) } @_
+}
+
 1;
