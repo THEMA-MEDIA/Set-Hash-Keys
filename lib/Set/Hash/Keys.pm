@@ -10,6 +10,28 @@ use overload(
     '%'   => sub {                                       symmetrical($_[0],$_[1]) },
 );
 
+use Exporter 'import';
+
+@EXPORT = qw (
+    &set_hash
+);
+
+@EXPORT_OK = qw (
+    &union
+    &intersection
+    &difference
+    &exclusive
+    &symmetrical
+);
+
+%EXPORT_TAGS = (
+    ':all' => \@EXPORT_OK,
+);
+
+sub set_hash {
+    __PACKAGE__->new(@_)
+}
+
 sub new {
     my $class = shift;
     my %data = @_;
