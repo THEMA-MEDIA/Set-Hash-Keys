@@ -4,9 +4,11 @@ package Set::Hash::Keys;
 
 Set::Hash::Keys - Treat Hashes as Sets, based on the keys only
 
-=head1 VERSION 0.x
+=head1 VERSION 0.01
 
 =cut
+
+our $VERSION = '0.01';
 
 use List::Util 'reduce';
 
