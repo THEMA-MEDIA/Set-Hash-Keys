@@ -9,6 +9,16 @@ use overload(
     '/'   => sub { pop @_ ?    exclusive($_[1],$_[0]) :    exclusive($_[0],$_[1]) },
     '%'   => sub {                                       symmetrical($_[0],$_[1]) },
 
+use Exporter 'import';
+
+@EXPORT = qw (
+    &set_hash
+);
+
+sub set_hash {
+    __PACKAGE__->new(@_)
+}
+
 sub new {
     my $class = shift;
     my %data = @_;
