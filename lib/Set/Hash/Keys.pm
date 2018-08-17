@@ -66,6 +66,18 @@ use overload(
     '%'   => sub {                                       symmetrical($_[0],$_[1]) },
 );
 
+=head1 IMPORTS
+
+For convenience, the C<set_hash> constructor has been imported in your current
+namespace, so you can do:
+
+    my $set_h = set_hash( foo => 'boat', bar => 'just' );
+
+All other functions mentioned below can be imported individually, or using the
+C<:all> tag.
+
+=cut
+
 use Exporter 'import';
 
 @EXPORT = qw (
