@@ -8,6 +8,7 @@ use overload(
     '*'   => sub { pop @_ ? intersection($_[1],$_[0]) : intersection($_[0],$_[1]) },
     '/'   => sub { pop @_ ?    exclusive($_[1],$_[0]) :    exclusive($_[0],$_[1]) },
     '%'   => sub {                                       symmetrical($_[0],$_[1]) },
+);
 
 sub new {
     my $class = shift;
