@@ -25,16 +25,16 @@ Set::Hash::Keys - Hash Objects as sets, based on their keys
     my $set4 = $set1 * $set2; # intersection
     #   foo => 'bike', # only the last remains
     
-    my $set5 = $set1 - $set2; # minus
+    my $set5 = $set1 - $set2; # difference
     #   bar => 'july',
     
-    my ($sub1, $both, $sub2) = ... $set1, $set2;
+    my ($sub1, $sub2) = $set1 / $set2;
     
-    my $set5 += { qux => 'moon' }; # add new elements
+    my $set5 += { qux => 'moon', ... }; # add new elements
     #   bar => 'july',
     #   qux => 'moon',
     
-    my $set3 -= { foo => 'sofa' };
+    my $set3 -= { foo => 'sofa', ... };
     #   bar => 'july',
     #   baz => 'fish',
     
