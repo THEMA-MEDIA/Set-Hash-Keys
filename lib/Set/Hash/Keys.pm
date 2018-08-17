@@ -15,6 +15,18 @@ use Exporter 'import';
     &set_hash
 );
 
+@EXPORT_OK = qw (
+    &union
+    &intersection
+    &difference
+    &exclusive
+    &symmetrical
+);
+
+%EXPORT_TAGS = (
+    ':all' => \@EXPORT_OK,
+);
+
 sub set_hash {
     __PACKAGE__->new(@_)
 }
