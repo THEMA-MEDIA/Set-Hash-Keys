@@ -25,7 +25,7 @@ use Exporter 'import';
 );
 
 %EXPORT_TAGS = (
-    ':all' => \@EXPORT_OK,
+    'all' => \@EXPORT_OK,
 );
 
 sub set_hash {
