@@ -7,11 +7,11 @@ use warnings;
 
 Set::Hash::Keys - Treat Hashes as Sets, based on the keys only
 
-=head1 VERSION 0.01
+=head1 VERSION 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use List::Util 'reduce';
 
