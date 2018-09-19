@@ -1,5 +1,8 @@
 package Set::Hash::Keys;
 
+use strict;
+use warnings;
+
 =head1 NAME
 
 Set::Hash::Keys - Treat Hashes as Sets, based on the keys only
@@ -82,11 +85,11 @@ C<:all> tag.
 
 use Exporter 'import';
 
-@EXPORT = qw (
+our @EXPORT = qw (
     &set_hash
 );
 
-@EXPORT_OK = qw (
+our @EXPORT_OK = qw (
     &union
     &intersection
     &difference
@@ -94,7 +97,7 @@ use Exporter 'import';
     &symmetrical
 );
 
-%EXPORT_TAGS = (
+our %EXPORT_TAGS = (
     'all' => \@EXPORT_OK,
 );
 
